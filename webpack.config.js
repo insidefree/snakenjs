@@ -1,16 +1,21 @@
+var webpack = require('webpack');
 module.exports = {
   entry: './src/app',
   output: {
     filename: './dist/bundle.js'
   },
+  devtool: 'source-map',
   resolve: {
-    // Add `.ts` and `.tsx` as a resolvable extension.
-    extensions: ['.ts', '.tsx', '.js'] // note if using webpack 1 you'd also need a '' in the array as well
+    moduleDirectories: ['node_modules', 'src'],
+    extensions: ['.ts', '.js']
   },
   module: {
-    loaders: [ // loaders will work with webpack 1 or 2; but will be renamed "rules" in future
-      // all files with a `.ts` or `.tsx` extension will be handled by `ts-loader`
-      { test: /\.tsx?$/, loader: 'ts-loader' }
+    loaders: [
+      { test: /\.ts?$/, loader: 'ts-loader' }
     ]
-  }
+  },
+  // Add minification
+  plugins: [
+    new webpack.optimize.UglifyJsPlugin()
+  ]
 }

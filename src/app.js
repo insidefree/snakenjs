@@ -1,25 +1,9 @@
-var term = require("terminal-kit").terminal;
-var Snake = (function () {
-    function Snake(name) {
-        this.name = name;
-        this.x1 = 1;
-        this.y1 = 3;
-        this.symb = "*";
-        this.name = name;
-    }
-    Snake.prototype.getName = function () {
-        return this.name;
-    };
-    Snake.prototype.setName = function (name) {
-        this.name = name;
-    };
-    return Snake;
-}());
-var snake = new Snake("bench");
-// term.moveTo(snake.x1, snake.y1)
-// term.bold( 'bold' ) ;
-term('Hello world!\n');
-term.red('red');
-term.moveTo(0, 0);
-term.blue('blue');
-console.log(snake.getName());
+"use strict";
+var term = require('terminal-kit').terminal;
+var snake_1 = require("./snake");
+var s1 = new snake_1.Snake(5, 5, "*");
+var s2 = new snake_1.Snake(10, 10, '#');
+//term.moveTo.red(1,1, "*")
+term.clear();
+s1.Draw();
+s2.Draw();

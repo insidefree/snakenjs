@@ -1,8 +1,9 @@
 {
     "compilerOptions": {
+        "baseUrl": "./src/app",
         "module": "commonjs",
         "target": "es5",
         "noImplicitAny": false,
-        "sourceMap": false
+        "sourceMap": true
     }
 }

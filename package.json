@@ -6,11 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "check": "webpack --display-error-details",
-    "start": "webpack node dist/bundle.js",
+    "start": "node dist/bundle.js",
     "tsc": "tsc src/app.ts",
     "start2": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/app.ts",
-    "app": "npm run tsbuild && node ./src/app.js",
+    "app": "npm run tsbuild && node ./dist/tsc.js",
     "tsbuild": "tsc ./src/app.ts"
   },
   "repository": {
@@ -33,6 +33,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "require": "^2.4.20",
     "terminal-kit": "^0.26.1",
     "typings": "^2.1.0"
   }
