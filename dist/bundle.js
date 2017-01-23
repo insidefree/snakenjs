@@ -44,28 +44,38 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	"use strict";
+	var term = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"terminal-kit\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).terminal;
+	//import {terminal} from "terminal-kit"
+	var Snake_1 = __webpack_require__(1);
+	var snake01 = new Snake_1.Snake(3, 3, "*");
+	var snake02 = new Snake_1.Snake(4, 5, "#");
+	snake01.Draw();
+	snake02.Draw();
+
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
+	"use strict";
 	var term = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"terminal-kit\""); e.code = 'MODULE_NOT_FOUND'; throw e; }())).terminal;
 	var Snake = (function () {
-	    function Snake(name) {
-	        this.name = name;
-	        this.x1 = 1;
-	        this.y1 = 3;
-	        this.symb = "*";
-	        this.name = name;
+	    function Snake(x, y, symb) {
+	        var _this = this;
+	        this.x = x;
+	        this.y = y;
+	        this.symb = symb;
+	        this.Draw = function () {
+	            term.moveTo.red(_this.x, _this.y, _this.symb);
+	        };
+	        this.x = x;
+	        this.y = y;
+	        this.symb = symb;
 	    }
-	    Snake.prototype.getName = function () {
-	        return this.name;
-	    };
-	    Snake.prototype.setName = function (name) {
-	        this.name = name;
-	    };
 	    return Snake;
 	}());
-	var snake = new Snake("bench");
-	term.moveTo(snake.x1, snake.y1);
-	term.bold('bold');
-	term('Hello world!\n');
-	console.log(snake.getName());
+	exports.Snake = Snake;
 
 
 /***/ }

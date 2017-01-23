@@ -1,33 +1,13 @@
 let term = require("terminal-kit").terminal
-//import {terminal} from "terminal-kit"
-interface ISnake {
+import Point from "./Point"
+import HorizontalLine from "./HorizontalLine"
+import VerticalLine from './VerticalLine';
 
-}
-
-class Snake {
-    public x1 = 1
-    public y1 = 3
-    public symb = "*"
-    constructor(public name: string) {
-        this.name = name
-    }
-
-    public getName() {
-        return this.name
-    }
-
-    public setName(name: string) {
-        this.name = name
-    }
-}
-
-let snake = new Snake("bench")
-// term.moveTo(snake.x1, snake.y1)
-// term.bold( 'bold' ) ;
- 
-
-term('Hello world!\n')
-term.red( 'red' )
-term.moveTo(0, 0)
-term.blue( 'blue' )
-console.log(snake.getName())
+let p01 = new Point(2, 1, "*")
+let p02 = new Point(8, 10, "#")
+let hl = new HorizontalLine(2, 6, 3, "@")
+let vl = new VerticalLine(4,7,2,"+")
+p01.Draw()
+hl.Draw()
+vl.Draw()
+p02.Draw()

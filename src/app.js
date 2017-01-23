@@ -1,25 +1,13 @@
+"use strict";
 var term = require("terminal-kit").terminal;
-var Snake = (function () {
-    function Snake(name) {
-        this.name = name;
-        this.x1 = 1;
-        this.y1 = 3;
-        this.symb = "*";
-        this.name = name;
-    }
-    Snake.prototype.getName = function () {
-        return this.name;
-    };
-    Snake.prototype.setName = function (name) {
-        this.name = name;
-    };
-    return Snake;
-}());
-var snake = new Snake("bench");
-// term.moveTo(snake.x1, snake.y1)
-// term.bold( 'bold' ) ;
-term('Hello world!\n');
-term.red('red');
-term.moveTo(0, 0);
-term.blue('blue');
-console.log(snake.getName());
+var Point_1 = require("./Point");
+var HorizontalLine_1 = require("./HorizontalLine");
+var VerticalLine_1 = require("./VerticalLine");
+var p01 = new Point_1["default"](2, 1, "*");
+var p02 = new Point_1["default"](8, 10, "#");
+var hl = new HorizontalLine_1["default"](2, 6, 3, "@");
+var vl = new VerticalLine_1["default"](4, 7, 2, "+");
+p01.Draw();
+hl.Draw();
+vl.Draw();
+p02.Draw();
