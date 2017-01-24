@@ -18,19 +18,4 @@ hlBot.Draw();
 vlLeft.Draw();
 vlRight.Draw();
 snake.Draw();
-setTimeout(function () {
-    snake.Move();
-}, 300);
-setTimeout(function () {
-    snake.Move();
-}, 300);
-setTimeout(function () {
-    snake.Move();
-}, 300);
-setTimeout(function () {
-    snake.Move();
-}, 300);
-setTimeout(function () {
-    snake.Move();
-}, 300);
 pReset.Draw();
