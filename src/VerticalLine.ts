@@ -1,22 +1,14 @@
 import Point from './Point';
+import Figure from "./Figure"
 
-interface IVerticalLine {
-    pVLine: Point[]
-}
-
-export default class VerticalLine implements IVerticalLine {
-    public pVLine = []
+export default class VerticalLine extends Figure {
 
     constructor(private yTop: number, private yBot: number, private x: number, private symb: string) {
+        super()
         for (let y = this.yTop; y <= this.yBot; y++) {
             let p = new Point(this.x, y, this.symb)
-            this.pVLine.push(p)
+            this.pLine.push(p)
         }
     }
 
-    public Draw(): void {
-        for (let p of this.pVLine) {
-            p.Draw()
-        }
-    }
 }

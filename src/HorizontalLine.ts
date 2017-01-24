@@ -1,23 +1,13 @@
-import Point, { IPoint } from "./Point"
+import Point from "./Point"
+import Figure from "./Figure"
 
-interface IHorizontalLine {
-    pLine: IPoint[]
-
-}
-
-export default class HorizontalLine implements IHorizontalLine {
-    public pLine = []
+export default class HorizontalLine extends Figure {
 
     constructor(private xLeft: number, private xRight: number, private y: number, private symb: string) {
+        super()
         for (let x = this.xLeft; x <= this.xRight; x++) {
             let p = new Point(x, this.y, this.symb)
             this.pLine.push(p)
-        }
-    }
-
-    public Draw(): void {
-        for (let p of this.pLine) {
-            p.Draw()
         }
     }
 }
