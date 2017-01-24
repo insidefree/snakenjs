@@ -36,6 +36,7 @@ export default class Snake extends Figure implements ISnake {
         console.log("----------",head);
         let nextPoint: Point = new Point(head)
         nextPoint.Move(1, this.direction)
+        console.log("nextPoint", nextPoint);
         return nextPoint
     }
 

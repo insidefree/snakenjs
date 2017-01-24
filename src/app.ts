@@ -13,7 +13,7 @@ let vlLeft = new VerticalLine(1, 10, 1, "@")
 let vlRight = new VerticalLine(1, 10, 20, "@")
 
 let pSnake = new Point({ x: 4, y: 5, symb: "*" })
-let snake = new Snake(pSnake, 4, Direction.RIGHT)
+let snake = new Snake(pSnake, 5, Direction.RIGHT)
 
 term.clear()
 hlTop.Draw()
@@ -22,5 +22,8 @@ vlLeft.Draw()
 vlRight.Draw()
 snake.Draw()
 
-
+setTimeout(()=>{snake.Move()}, 3000)
+setTimeout(()=>{snake.Move()}, 3000)
+setTimeout(()=>{snake.Move()}, 3000)
+setTimeout(()=>{snake.Move()}, 3000)
 pReset.Draw()

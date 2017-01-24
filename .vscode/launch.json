@@ -4,16 +4,35 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
-        
-        {
-            "type": "node",
-            "request": "launch",
-            "name": "Launch Program",
-            "program": "${workspaceRoot}/src/app.js",
+       {
+            "args": [],
             "cwd": "${workspaceRoot}",
-            "outFiles": [],
-            "sourceMaps": true
+            "env": {
+                "NODE_ENV": "development"
+            },
+            "console": "internalConsole",
+            "name": "DEBUG",
+            "outFiles": ["${workspaceRoot}/bin/app.js"],
+            // "preLaunchTask": "compile",
+            "program": "${workspaceRoot}/src/app.ts",
+            "request": "launch",
+            "runtimeArgs": [
+                "--nolazy"
+            ],
+            "runtimeExecutable": null,
+            "sourceMaps": true,
+            "stopOnEntry": false,
+            "type": "node"
         },
+        // {
+        //     "type": "node",
+        //     "request": "launch",
+        //     "name": "Launch Program",
+        //     "program": "${workspaceRoot}/src/app.js",
+        //     "cwd": "${workspaceRoot}",
+        //     "outFiles": [],
+        //     "sourceMaps": true
+        // },
         {
             "type": "node",
             "request": "attach",
