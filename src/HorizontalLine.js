@@ -15,7 +15,7 @@ var HorizontalLine = (function (_super) {
         _this.y = y;
         _this.symb = symb;
         for (var x = _this.xLeft; x <= _this.xRight; x++) {
-            var p = new Point_1["default"](x, _this.y, _this.symb);
+            var p = new Point_1["default"]({ x: x, y: _this.y, symb: _this.symb });
             _this.pLine.push(p);
         }
         return _this;

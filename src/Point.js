@@ -2,17 +2,18 @@
 var Direction_1 = require("./Direction");
 var term = require("terminal-kit").terminal;
 var Point = (function () {
-    function Point(x, y, symb, p) {
+    function Point(data) {
         var _this = this;
         this.Draw = function () {
             term.moveTo.red(_this.x, _this.y, _this.symb);
         };
-        p ? (this.x = p.x,
-            this.y = p.y,
-            this.symb = p.symb)
-            : (this.x = x,
-                this.y = y,
-                this.symb = symb);
+        this.Clear = function () {
+            _this.symb = "";
+            _this.Draw();
+        };
+        this.x = data.x;
+        this.y = data.y;
+        this.symb = data.symb;
     }
     Point.prototype.Move = function (offset, direction) {
         if (direction == Direction_1.Direction.RIGHT) {
@@ -22,10 +23,10 @@ var Point = (function () {
             this.x = this.x - offset;
         }
         else if (direction == Direction_1.Direction.UP) {
-            this.x = this.y + offset;
+            this.y = this.y + offset;
         }
         else if (direction == Direction_1.Direction.DOWN) {
-            this.x = this.y - offset;
+            this.y = this.y - offset;
         }
     };
     return Point;

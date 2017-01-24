@@ -4,20 +4,17 @@ export interface IPoint {
     Draw: () => void
 }
 
-export default class Point implements IPoint {
-    private x: number
-    private y: number
-    private symb: string
+type Data = Point | { x: number, y: number, symb: string }
 
-    public constructor(x?, y?, symb?, p?) {
-        p ? (
-            this.x = p.x,
-            this.y = p.y,
-            this.symb = p.symb)
-            : (
-                this.x = x,
-                this.y = y,
-                this.symb = symb)
+export default class Point implements IPoint {
+    public x: number
+    public y: number
+    public symb: string
+
+    public constructor(data: Data) {
+        this.x = data.x
+        this.y = data.y
+        this.symb = data.symb
     }
 
     public Move(offset: number, direction: Direction) {
@@ -26,13 +23,18 @@ export default class Point implements IPoint {
         } else if (direction == Direction.LEFT) {
             this.x = this.x - offset
         } else if (direction == Direction.UP) {
-            this.x = this.y + offset
+            this.y = this.y + offset
         } else if (direction == Direction.DOWN) {
-            this.x = this.y - offset
+            this.y = this.y - offset
         }
     }
-    
+
     public Draw = () => {
         term.moveTo.red(this.x, this.y, this.symb)
+    }
+
+    public Clear = () => {
+        this.symb = ""
+        this.Draw()
     }
 }

@@ -10,10 +10,21 @@ var Snake = (function (_super) {
     __extends(Snake, _super);
     function Snake(tail, length, direction) {
         var _this = _super.call(this) || this;
-        _this.tail = tail;
-        _this.length = length;
+        _this.Move = function () {
+            var tail = _this.pLine[0];
+            _this.pLine.shift();
+            var head = _this.GetNextPoint();
+            tail.Clear();
+            head.Draw();
+        };
+        _this.GetNextPoint = function () {
+            var head = _this.pLine[_this.pLine.length - 1];
+            console.log("----------", head);
+            var nextPoint = new Point_1["default"](head);
+            nextPoint.Move(1, _this.direction);
+            return nextPoint;
+        };
         _this.direction = direction;
-        //this.pLine = []
         for (var i = 0; i < length; i++) {
             var p = new Point_1["default"](tail);
             p.Move(i, direction);

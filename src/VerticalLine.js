@@ -15,7 +15,7 @@ var VerticalLine = (function (_super) {
         _this.x = x;
         _this.symb = symb;
         for (var y = _this.yTop; y <= _this.yBot; y++) {
-            var p = new Point_1["default"](_this.x, y, _this.symb);
+            var p = new Point_1["default"]({ x: _this.x, y: y, symb: _this.symb });
             _this.pLine.push(p);
         }
         return _this;
