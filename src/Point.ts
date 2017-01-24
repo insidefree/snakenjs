@@ -1,21 +1,37 @@
+import { Direction } from './Direction';
 let term = require("terminal-kit").terminal
 export interface IPoint {
-    x: number
-    y: number
-    symb: string
     Draw: () => void
 }
 
 export default class Point implements IPoint {
-    constructor(public x: number, public y: number, public symb: string) {
-        this.x = x
-        this.y = y
-        this.symb = symb
+    private x: number
+    private y: number
+    private symb: string
+
+    public constructor(x?, y?, symb?, p?) {
+        p ? (
+            this.x = p.x,
+            this.y = p.y,
+            this.symb = p.symb)
+            : (
+                this.x = x,
+                this.y = y,
+                this.symb = symb)
     }
 
-    getX() {
-        return this.x
+    public Move(offset: number, direction: Direction) {
+        if (direction == Direction.RIGHT) {
+            this.x = this.x + offset
+        } else if (direction == Direction.LEFT) {
+            this.x = this.x - offset
+        } else if (direction == Direction.UP) {
+            this.x = this.y + offset
+        } else if (direction == Direction.DOWN) {
+            this.x = this.y - offset
+        }
     }
+    
     public Draw = () => {
         term.moveTo.red(this.x, this.y, this.symb)
     }

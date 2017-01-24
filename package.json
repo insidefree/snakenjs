@@ -11,7 +11,8 @@
     "start2": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/app.ts",
     "app": "npm run tsbuild && node ./src/app.js",
-    "tsbuild": "tsc ./src/app.ts"
+    "tsbuild": "tsc ./src/app.ts",
+    "debug": "node --nolazy --debug-brk=5858 ./src/app.ts"
   },
   "repository": {
     "type": "git",
