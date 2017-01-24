@@ -21,20 +21,6 @@ hlBot.Draw()
 vlLeft.Draw()
 vlRight.Draw()
 snake.Draw()
-setTimeout(() => {
-    snake.Move()
-}, 300)
-setTimeout(() => {
-    snake.Move()
-}, 300)
-setTimeout(() => {
-    snake.Move()
-}, 300)
-setTimeout(() => {
-    snake.Move()
-}, 300)
-setTimeout(() => {
-    snake.Move()
-}, 300)
+
 
 pReset.Draw()
