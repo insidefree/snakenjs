@@ -33,6 +33,7 @@
     "webpack": "^1.14.0"
   },
   "dependencies": {
+    "child_process": "^1.0.2",
     "terminal-kit": "^0.26.1",
     "typings": "^2.1.0"
   }
