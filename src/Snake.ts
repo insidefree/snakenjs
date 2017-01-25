@@ -27,16 +27,15 @@ export default class Snake extends Figure implements ISnake {
         let tail: Point = this.pLine[0]
         this.pLine.shift()
         let head: Point = this.GetNextPoint()
+        this.pLine.push(head)
         tail.Clear()
         head.Draw()
     }
 
     public GetNextPoint = () => {
         let head = this.pLine[this.pLine.length - 1]
-        //console.log("----------",head);
         let nextPoint: Point = new Point(head)
         nextPoint.Move(1, this.direction)
-        //console.log("nextPoint", nextPoint);
         return nextPoint
     }
 
