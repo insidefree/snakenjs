@@ -15,3 +15,4 @@ var Snake = (function () {
     return Snake;
 }());
 exports.Snake = Snake;
+//# sourceMappingURL=snake.js.map

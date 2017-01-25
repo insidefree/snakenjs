@@ -7,3 +7,4 @@ var s2 = new snake_1.Snake(10, 10, '#');
 term.clear();
 s1.Draw();
 s2.Draw();
+//# sourceMappingURL=app.js.map
