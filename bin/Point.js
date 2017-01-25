@@ -8,7 +8,7 @@ var Point = (function () {
             term.moveTo.red(_this.x, _this.y, _this.symb);
         };
         this.Clear = function () {
-            _this.symb = "";
+            _this.symb = " ";
             _this.Draw();
         };
         this.x = data.x;

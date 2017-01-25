@@ -19,9 +19,10 @@ var Snake = (function (_super) {
         };
         _this.GetNextPoint = function () {
             var head = _this.pLine[_this.pLine.length - 1];
-            console.log("----------", head);
+            //console.log("----------",head);
             var nextPoint = new Point_1.default(head);
             nextPoint.Move(1, _this.direction);
+            //console.log("nextPoint", nextPoint);
             return nextPoint;
         };
         _this.direction = direction;

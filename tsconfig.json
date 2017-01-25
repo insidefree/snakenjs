@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "emitDecoratorMetadata": true,
+        //"emitDecoratorMetadata": true,
         "module": "commonjs",
         "target": "ES5",
         "outDir": "bin",

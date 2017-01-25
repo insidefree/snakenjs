@@ -34,7 +34,7 @@ export default class Point implements IPoint {
     }
 
     public Clear = () => {
-        this.symb = ""
+        this.symb = " "
         this.Draw()
     }
 }

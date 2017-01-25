@@ -12,7 +12,7 @@
             },
             "console": "internalConsole",
             "name": "DEBUG",
-            "outFiles": ["${workspaceRoot}/bin/app.js"],
+            "outFiles": ["${workspaceRoot}/bin/*.js"],
             // "preLaunchTask": "compile",
             "program": "${workspaceRoot}/src/app.ts",
             "request": "launch",
