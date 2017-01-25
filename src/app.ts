@@ -27,3 +27,4 @@ setTimeout(()=>{snake.Move()}, 1000)
 setTimeout(()=>{snake.Move()}, 1500)
 setTimeout(()=>{snake.Move()}, 2000)
 setTimeout(()=>pReset.Draw(), 5000)
+ 
