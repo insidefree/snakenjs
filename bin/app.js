@@ -19,15 +19,6 @@ vlLeft.Draw();
 vlRight.Draw();
 snake.Draw();
 pReset.Draw();
-// setTimeout(() => { snake.Move() }, 500)
-// setTimeout(() => { snake.Move() }, 1000)
-// setTimeout(() => { snake.Move() }, 1500)
-// setTimeout(() => { snake.Move() }, 2000)
-// setTimeout(() => pReset.Draw(), 5000)
-// function terminate() {
-//     term.grabInput(false);
-//     setTimeout(function () { process.exit() }, 100);
-// }
 term.grabInput({ mouse: 'button' });
 setInterval(function () { snake.Move(); }, 500);
 term.on('key', function (name, matches, data) {
