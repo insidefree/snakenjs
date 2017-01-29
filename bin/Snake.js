@@ -5,6 +5,7 @@ var __extends = (this && this.__extends) || function (d, b) {
     d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
 };
 var Point_1 = require("./Point");
+var Direction_1 = require("./Direction");
 var Figure_1 = require("./Figure");
 var Snake = (function (_super) {
     __extends(Snake, _super);
@@ -23,6 +24,26 @@ var Snake = (function (_super) {
             var nextPoint = new Point_1.default(head);
             nextPoint.Move(1, _this.direction);
             return nextPoint;
+        };
+        _this.HandleKey = function (name, term) {
+            if (name === 'CTRL_C') {
+                var pReset = new Point_1.default({ x: 0, y: 11, symb: "" });
+                pReset.Draw();
+                term.grabInput(false);
+                setTimeout(function () { process.exit(); }, 100);
+            }
+            else if (name === "UP") {
+                _this.direction = Direction_1.Direction.UP;
+            }
+            else if (name === "DOWN") {
+                _this.direction = Direction_1.Direction.DOWN;
+            }
+            else if (name === "RIGHT") {
+                _this.direction = Direction_1.Direction.RIGHT;
+            }
+            else if (name === "LEFT") {
+                _this.direction = Direction_1.Direction.LEFT;
+            }
         };
         _this.direction = direction;
         for (var i = 0; i < length; i++) {

@@ -23,9 +23,9 @@ export default class Point implements IPoint {
         } else if (direction == Direction.LEFT) {
             this.x = this.x - offset
         } else if (direction == Direction.UP) {
-            this.y = this.y + offset
-        } else if (direction == Direction.DOWN) {
             this.y = this.y - offset
+        } else if (direction == Direction.DOWN) {
+            this.y = this.y + offset
         }
     }
 

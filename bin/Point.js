@@ -23,10 +23,10 @@ var Point = (function () {
             this.x = this.x - offset;
         }
         else if (direction == Direction_1.Direction.UP) {
-            this.y = this.y + offset;
+            this.y = this.y - offset;
         }
         else if (direction == Direction_1.Direction.DOWN) {
-            this.y = this.y - offset;
+            this.y = this.y + offset;
         }
     };
     return Point;
