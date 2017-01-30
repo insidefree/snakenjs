@@ -34,19 +34,19 @@ term.on('key', function (name, matches, data) {
 //     i++
 // }
 
-const getVisa = (document, response, reject) => {
-    console.log("Pending visa...")
-    setTimeout(() => {
-        Math.random() > .5 ? response(document) : reject()
-    }, 2000)
-}
+// const getVisa = (document, response, reject) => {
+//     console.log("Pending visa...")
+//     setTimeout(() => {
+//         Math.random() > .5 ? response(document) : reject()
+//     }, 2000)
+// }
 
-const gotDoc = (document) => {
-    console.log(document.id)
-}
+// const gotDoc = (document) => {
+//     console.log(document.id)
+// }
 
-const notGotDoc = () => {
-    console.log("You didn't get document")
-}
+// const notGotDoc = () => {
+//     console.log("You didn't get document")
+// }
 
-getVisa({ id: "document" }, gotDoc, notGotDoc)
+// getVisa({ id: "document" }, gotDoc, notGotDoc)
